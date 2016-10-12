@@ -1,0 +1,32 @@
+<ion-header-bar class="bar-calm">
+    <a class="button icon ion-chevron-left" href="/#/home">Retour</a>
+    <h1 class="title">Formulaire</h1>
+</ion-header-bar>
+
+<ion-content>
+    <label class="item item-input">
+        <input ng-model="form.prenom" type="text" placeholder="Prenom">
+    </label>
+
+    <label class="item item-input">
+        <input ng-model="form.nom" type="text" placeholder="Nom">
+    </label>
+
+    <label class="item item-input">
+        <input ng-model="form.dateNaissance" type="date" placeholder="Date de naissance">
+    </label>
+
+    <label class="item item-input">
+        <input ng-model="form.mail" type="email" placeholder="Mail">    
+    </label>
+
+    <div class="padding container">
+        <div class="row">
+            <div class="col"></div>
+            <button ng-click="reset()" class="button button-assertive col-40"> Annuler </button>
+            <div class="col"></div>
+            <button ng-click="submit()" class="button button-balanced col-40"> Envoyer </button>
+            <div class="col"></div>
+        </div>
+    </div>
+</ion-content>
