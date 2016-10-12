@@ -1,4 +1,4 @@
-angular.module('controllers', [])
+angular.module('starter.controllers', [])
 
 .controller('formCtrl', function ($scope, $ionicPopup) {
     $scope.form = {
