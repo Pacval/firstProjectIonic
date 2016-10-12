@@ -1,15 +1,9 @@
 angular.module('app.controllers', [])
 
-.controller('formPart1Ctrl', function ($scope, $ionicPopup, $state) {
-        if (typeof $scope.form === "undefined") {
-            $scope.form = {
-                'prenom': "",
-                'nom': "",
-                'dateNaissance': "",
-                'mail': ""
-            };
-        }
+.controller('formPart1Ctrl', function ($scope, $ionicPopup, $state, FormDatas) {
 
+        // lien avec les données de la factory
+        $scope.form = FormDatas;
 
         $scope.reset = function () {
             var popupConfirmReset = $ionicPopup.confirm({
@@ -37,14 +31,14 @@ angular.module('app.controllers', [])
                 $state.go('formPart2');
 
             } else {
-
                 $ionicPopup.alert({
                     title: 'Erreur',
                     template: 'Veuillez remplir tous les champs'
                 });
             }
-        }
+        };
     })
-    .controller('formPart2Ctrl', function ($scope, $state) {
-
-    })
+    .controller('formPart2Ctrl', function ($scope, $state, FormDatas) {
+        // lien avec les données de la factory => les données des 2 controllers sont reliées
+        $scope.form = FormDatas;
+    });
